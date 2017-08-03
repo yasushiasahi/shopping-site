@@ -68,13 +68,11 @@ header .sp_navi .menu li a {
 #main .contents .shopping_guide {
   color: #887f69;
 }
-#main .contents .shopping_guide .guide {
-  text-align: center;
+#main .contents .shopping_guide .sp_img {
   margin: 20px 0;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
 }
 #main .contents .shopping_guide .container {
   width: 100%;
@@ -82,7 +80,7 @@ header .sp_navi .menu li a {
 #main .contents .shopping_guide .container .delivery, #main .contents .shopping_guide .container .payment {
   background-color: white;
   padding: 20px 20px 5px 20px;
-  margin-top: 10px;
+  margin-bottom: 10px;
 }
 #main .contents .shopping_guide .container .delivery h4, #main .contents .shopping_guide .container .payment h4 {
   margin: 0 0 20px 0;
@@ -105,23 +103,35 @@ header .sp_navi .menu li a {
   margin-bottom: 15px;
   color: black;
 }
+@media (max-width: 640px) {
+  #main .contents .shopping_guide .pc_img {
+    display: none;
+  }
+}
+@media (min-width: 641px) {
+  #main .contents .shopping_guide .sp_img {
+    display: none;
+  }
+  #main .contents .shopping_guide .pc_img {
+    width: 100%;
+    margin: 20px 0;
+  }
+}
 #main .sidebar .item_searth {
   background-color: white;
   padding: 20px;
-  margin: 10px 0;
+  margin-bottom: 10px;
 }
-#main .sidebar .item_searth label {
-  display: none;
-}
-#main .sidebar .item_searth .search_field {
+#main .sidebar .item_searth .text_field {
   margin: 0;
   background-color: #f9f8f6;
   border: 0;
   box-sizing: border-box;
   width: 80%;
   color: #b0b0b0;
+  border-radius: 0;
 }
-#main .sidebar .item_searth .search_button {
+#main .sidebar .item_searth .submit_button {
   background-image: url("../images/top/search_icon.png");
   background-repeat: no-repeat;
   background-position: center;
@@ -131,25 +141,34 @@ header .sp_navi .menu li a {
   border: 0;
   margin: 0;
   background-color: #f9f8f6;
+  border-radius: 0;
+}
+@media (max-width: 640px) {
+  #main .sidebar .item_searth label {
+    display: none;
+  }
+}
+@media (min-width: 641px) {
+  #main .sidebar .item_searth .text_field {
+    width: 59%;
+  }
+  #main .sidebar .item_searth .submit_button {
+    width: 10%;
+  }
 }
 #main .sidebar .page_link, #main .sidebar .categories {
   margin-bottom: 10px;
 }
-#main .sidebar .page_link button, #main .sidebar .categories button {
+#main .sidebar .page_link .toggle_button, #main .sidebar .categories .toggle_button {
   background-color: #887f69;
   background-image: url("../images/top/down_icon.png");
   background-repeat: no-repeat;
   background-position: right 10px center;
-  width: 100%;
   margin: 0;
-  padding: 0;
-  height: 60px;
-  border-radius: 0;
-  border: 0;
+  padding: 15px 0 15px 0;
   text-align: left;
 }
-#main .sidebar .page_link button img, #main .sidebar .categories button img {
-  width: 30%;
+#main .sidebar .page_link .toggle_button img, #main .sidebar .categories .toggle_button img {
   margin-left: 20px;
 }
 #main .sidebar .page_link ul, #main .sidebar .categories ul {
@@ -174,7 +193,7 @@ header .sp_navi .menu li a {
 #main .sidebar .about .heading, #main .sidebar .shop_info .heading {
   background-color: #887f69;
   margin: 0;
-  padding: 20px 0 20px 0;
+  padding: 15px 0 15px 0;
   text-align: left;
 }
 #main .sidebar .about .heading img, #main .sidebar .shop_info .heading img {
