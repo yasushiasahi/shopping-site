@@ -20,7 +20,7 @@ $Crimson: #9d1a2d;
 
 html {
   font-size: 62.5%;
-  background-color: $lightGray;
+  // background-color: $lightGray;
 }
 
 body {
@@ -29,9 +29,9 @@ body {
 
 
 header {
-  margin-top: 20px;
+  padding-top: 20px;
   text-align: center;
-
+  background-color: $lightGray;
   .sp_navi {
     margin: 5px 0;
     a {
@@ -67,8 +67,12 @@ header {
 
   @media (min-width: 641px) {
     text-align: left;
+    .container {
+      width: 100%;
+      padding-bottom: 40px;
+    }
     .logo {
-      width: 50%;
+      width: 30%;
     }
     .sp_navi {
       display: none;
@@ -76,7 +80,7 @@ header {
     .pc_navi {
       text-align: right;
       a {
-        margin-left: 15px;
+        margin-left: 8px;
         &:hover {
           @include opacity(0.5);
         }
@@ -89,7 +93,10 @@ header {
 
 
 #main {
-  margin-top: 10px;
+  // margin-top: 10px;
+  background-color: $lightGray;
+  .wrap {
+    width: 100%;
   .contents {
     .cover {
       .owl-dots {
@@ -110,6 +117,8 @@ header {
     } // .cover
 
     .new_items, .popular_items, .category_items, .recent_items {
+      // width: 95%;
+      // @include blockCenter;
       .sp_img {
         margin: 20px 0;
         @include blockCenter;
@@ -158,22 +167,29 @@ header {
 
     // list.html /////////////////////////////////////////
     .root_menu {
+      width:95%;
+      @include blockCenter;
+      box-sizing: border-box;
       background-color: $beige;
       padding: 10px;
       border-radius: 3px;
       color: $darkBeige;
       @include fontSize(16);
       margin-bottom: 20px;
+      @media (min-width:641px) {
+        width: 100%;
+      }
     }
 
     .back_next_button {
       margin: 20px 0;
+      width: 100%;
       h5 {
         background-color: $darkBeige;
         color: white;
         text-transform: uppercase;
         font-weight: bold;
-        padding: 20px 60px;
+        padding: 20px 40px;
       }
       .btn_left {
         float:left;
@@ -181,13 +197,20 @@ header {
       .btn_right {
         float:right;
       }
+      @media (min-width:641px) {
+        h5 {
+          padding: 10px 30px;
+          @include fontSize(15);
+        }
+      }
     }
     ///////////////////////////////////////// list.html //
     // prodacts.html /////////////////////////////////////
     .products {
       background-color: white;
       .inner {
-        width: 100%;
+        width: 95%;
+        @include blockCenter;
         background-color: white;
         .product_name {
           padding: 20px 0;
@@ -196,12 +219,14 @@ header {
           h5 {
             margin-bottom: 5px;
             font-weight: bold;
+            @include fontSize(18);
+            letter-spacing: 0.3rem;
             p {
               color: $gray;
               margin: 0;
               @include fontSize(15);
               font-weight: normal;
-              // display: block;
+              letter-spacing: 0rem;
             }
           }
         }
@@ -258,6 +283,9 @@ header {
             span {
               @include fontSize(20);
             }
+            .black {
+              color: black;
+            }
           }
         }
         .quantity {
@@ -276,6 +304,7 @@ header {
         .submit_button {
           background-image: url("../images/products/add_to_cart.png");
           background-repeat: no-repeat;
+          background-position: center;
           @include blockCenter;
           width: 225px;
           height: 55px;
@@ -335,6 +364,50 @@ header {
             margin-left: 2%;
             img {
               width: 48%;
+            }
+          }
+          .color_size {
+            img {
+              height: auto;
+            }
+          }
+          .pqa {
+            border-bottom: 1px solid $beige;
+          }
+          .price {
+            img {
+              height: auto;
+            }
+            h2 {
+              @include fontSize(25);
+              span {
+                @include fontSize(18);
+              }
+            }
+          }
+          .quantity {
+            border-bottom: 0;
+            img {
+              height: auto;
+            }
+          }
+          .submit_button {
+            display: block;
+            margin-left: auto;
+            margin-right: 0;
+          }
+          .description {
+            margin-top: 30px;
+            h5 {
+              @include fontSize(16);
+              letter-spacing: 0.05rem;
+            }
+            div {
+              p {
+                @include fontSize(14);
+                letter-spacing: 0.05rem;
+                line-height: 2.5rem;
+              }
             }
           }
         }
@@ -411,6 +484,7 @@ header {
       background-color: white;
       padding: 20px;
       margin-bottom: 10px;
+      box-sizing: border-box;
       .text_field {
         margin: 0;
         background-color: $lightGray;
@@ -441,11 +515,11 @@ header {
       @media (min-width:641px) {
         padding: 10px;
         .text_field {
-          width: 72%;
+          width: 79%;
         }
         .submit_button {
           background-size: auto;
-          width: 22px;
+          width: 21%;
         }
       }
     } // .item_searth
@@ -521,12 +595,15 @@ header {
           }
           .description {
             width: 100%;
-            text-align: center;
+            // text-align: center;
             p {
               margin: 0 0 10px 0;
             }
             a {
               margin: 0;
+              img {
+                @include blockCenter;
+              }
             }
           }
         }
@@ -540,10 +617,14 @@ header {
   @media (min-width: 640px) {
     @include fontSize(12);
   }
+
+  } //.wrap
 } // #main
 
 
 #footer {
+  background-color: $lightGray;
+  width: 100%;
   text-align: center;
   .devider {
     border-bottom: 1px solid $darkBeige;
@@ -551,14 +632,14 @@ header {
     margin-bottom: 20px;
   }
   p {
-    color: $darkBeige;
+    color: black;
     a {
       text-decoration: none;
-      color: $darkBeige;
+      color: black;
     }
   }
   .copy {
-    color: $darkBeige;
+    color: $beige;
   }
   @media (min-width: 641px) {
     .devider {
@@ -569,7 +650,10 @@ header {
 }
 // #footer
 
-
+.w95_center {
+  width: 95%;
+  @include blockCenter;
+}
 
 
 
